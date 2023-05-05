@@ -38,7 +38,11 @@
 
 - **[Make comment as a user]**
 - **[Set up associations between models]**
-- **[Write SQL queries with Active Record.**
+- **[Write SQL queries with Active Record]**
+- **[Use validations for models]**
+- **[Write unit tests for models]**
+
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
