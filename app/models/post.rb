@@ -2,7 +2,7 @@ class Post < ApplicationRecord
   belongs_to :author, foreign_key: :author_id, class_name: 'User', counter_cache: :postscounter
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
-  
+
   def update_user_post_counter
     author.increment!(:postscounter)
   end
@@ -11,5 +11,4 @@ class Post < ApplicationRecord
     comments.order(created_at: :desc).limit(5)
   end
   private :update_user_post_counter
-
 end

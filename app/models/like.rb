@@ -7,5 +7,4 @@ class Like < ApplicationRecord
     post.increment!(:likescounter)
   end
   private :update_post_like_counter
-  
 end
