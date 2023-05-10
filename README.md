@@ -41,6 +41,7 @@
 - **[Write SQL queries with Active Record]**
 - **[Use validations for models]**
 - **[Write unit tests for models]**
+- **[Write request tests for models]**
 
 
 
