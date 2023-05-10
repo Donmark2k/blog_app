@@ -1,41 +1,52 @@
-require 'rails_helper'
 RSpec.describe 'Posts', type: :request do
-  user = User.new(name: 'Something',
-                  photo: 'http://localhost:3000/something.jpg',
-                  bio: 'Something test',
-                  postscounter: 0)
-  user.save
-  post = Post.new(
-    title: 'Something',
-    text: 'Something test',
-    author: user,
-    commentscounter: 0,
-    likescounter: 0
-  )
-  post.save
+  let!(:user) do
+    User.create(
+      name: 'Rails',
+      photo: 'http://localhost:3000/thursday.png',
+      bio: 'Something test',
+      postscounter: 10
+    )
+  end
 
-  describe 'Post GET /index' do
-    it 'rendered post template' do
+  let!(:post) do
+    Post.create(
+      title: 'Ruby',
+      text: 'Learn Ruby',
+      author: user,
+      commentscounter: 10,
+      likescounter: 10
+    )
+  end
+
+  describe 'GET /index' do
+    before do
       get "/users/#{user.id}/posts/"
+    end
+
+    it 'renders post template' do
       expect(response).to render_template(:index)
     end
-    it 'post responsed body with correct place holder' do
-      get "/users/#{user.id}/posts/"
-      expect(response.body).to include('list of posts for a given user ')
+
+    it 'post response body includes correct placeholder text' do
+      expect(response.body).to include('list of posts for a given user')
     end
   end
-  describe 'Post GET /show' do
-    it 'return success for detail post' do
+
+  describe 'GET /show' do
+    before do
       get "/users/#{user.id}/posts/#{post.id}"
+    end
+
+    it 'returns success for detail post' do
       expect(response).to have_http_status(200)
     end
-    it 'rendered post detail template' do
-      get "/users/#{user.id}/posts/#{post.id}"
+
+    it 'renders post detail template' do
       expect(response).to render_template(:show)
     end
-    it 'post detail responsed body with correct place holder' do
-      get "/users/#{user.id}/posts/#{post.id}"
-      expect(response.body).to include('Post detail with comments ')
+
+    it 'post detail response body includes correct placeholder text' do
+      expect(response.body).to include('Post detail with comments')
     end
   end
 end
