@@ -42,6 +42,7 @@
 - **[Use validations for models]**
 - **[Write unit tests for models]**
 - **[Write request tests for models]**
+- **[Set up the view model]**
 
 
 
