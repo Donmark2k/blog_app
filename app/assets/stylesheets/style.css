@@ -1,3 +1,6 @@
+h1 {
+    text-align: center;
+}
 .user {
   display: flex;
   flex-direction: column;
