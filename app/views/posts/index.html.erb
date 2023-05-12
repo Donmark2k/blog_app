@@ -5,7 +5,7 @@
 
       <%= render 'shared/post', post:post %>
 
-     <% if  !post.five_most_recent_comments.empty?%>
+     <% unless post.five_most_recent_comments.empty?%>
          <div class ="post_comment">
      <%post.five_most_recent_comments.each do |comment| %>
           <%= render 'shared/comment', comment:comment %>

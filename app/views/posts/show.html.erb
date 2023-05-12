@@ -10,7 +10,7 @@
     <p><%=@post.text%></p>
   </div>
     </div>
-    <% if  !@post.comments.empty?%>
+    <% unless @post.comments.empty? %>
     <div class ="post_detail_comment">
      <% @post.comments.each do |comment| %>
        <%= render 'shared/comment', comment:comment %>
