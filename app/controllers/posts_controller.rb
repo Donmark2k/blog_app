@@ -19,14 +19,15 @@ class PostsController < ApplicationController
     @post.likescounter = 0
     respond_to do |format|
       format.html do
-    if @post.save
-      redirect_to user_posts_path(@user)
-    else
-      render :new, locals: {post: @post }
+        if @post.save
+          redirect_to user_posts_path(@user)
+        else
+          render :new, locals: { post: @post }
+        end
+      end
     end
   end
-end
-end
+
   private
 
   def post_params
