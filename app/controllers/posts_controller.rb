@@ -13,15 +13,20 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = @current_user.posts.new(post_params)
+    @user = User.find(params[:user_id])
+    @post = @user.posts.new(post_params)
+    @post.commentscounter = 0
+    @post.likescounter = 0
+    respond_to do |format|
+      format.html do
     if @post.save
-      @user = User.find(params[:user_id])
       redirect_to user_posts_path(@user)
     else
-      render :new
+      render :new, locals: {post: @post }
     end
   end
-
+end
+end
   private
 
   def post_params

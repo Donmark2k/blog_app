@@ -1,5 +1,6 @@
-<%= form_with model: [@current_user, @current_user.posts.build] do |form| %>
-    <div class="post_form">
+<%# <%= form_with model: [@current_user, @current_user.posts.build] do |form| %> 
+<%= form_with model: @current_user, url: user_posts_path, method: post, local: true, scope: :post do |form| %>  
+  <div class="post_form">
     <h3> Add New Post </h3>
       <div>
       <%= form.label :title  %><br>
