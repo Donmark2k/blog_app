@@ -114,6 +114,12 @@ To run the project, execute the following command:
 - Twitter: [@JohnAdibe2](https://twitter.com/JohnAdibe2)
 - LinkedIn: [@John Adibe](https://www.linkedin.com/in/john-adibe/)
 
+👤 **Aubin SIMPEZE**
+
+- GitHub: [@githubhandle](https://github.com/aubinleyoung)
+- Twitter: [@twitterhandle](https://twitter.com/Aubin_Simpeze)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/aubin-simpeze/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
