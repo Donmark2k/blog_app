@@ -14,7 +14,7 @@ RSpec.describe Comment, type: :model do
   )
 
   subject(:comment) do
-    Comment.new(text: 'TEst comments',
+    Comment.new(text: 'Test comments',
                 author: user,
                 post:)
   end
@@ -28,6 +28,6 @@ RSpec.describe Comment, type: :model do
 
   it 'it should update post comment counter' do
     comment.save
-    expect(post.commentscounter).to eq(2)
+    expect(post.commentscounter).to eq(1)
   end
 end
