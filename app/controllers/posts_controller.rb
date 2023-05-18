@@ -9,18 +9,17 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = @current_user.posts.new
+    @post = current_user.posts.new
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @post = @user.posts.new(post_params)
+    @post = current_user.posts.new(post_params)
     @post.commentscounter = 0
     @post.likescounter = 0
     respond_to do |format|
       format.html do
         if @post.save
-          redirect_to user_posts_path(@user)
+          redirect_to user_posts_path(current_user)
         else
           render :new, locals: { post: @post }
         end
