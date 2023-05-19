@@ -1,27 +1,24 @@
 class CommentsController < ApplicationController
   load_and_authorize_resource
   def new
-    # @post = Post.find(params[:post_id])
-    # @comment = @post.comments.new
     @user = User.find(params[:user_id])
     @post = @user.posts.find(params[:post_id])
   end
 
   def create
-    # @user = User.find(params[:user_id])
-    # @post = @user.posts.find(params[:post_id])
+    @user = User.find(params[:user_id])
+    @post = Post.find(params[:post_id])
 
     @comment = @post.comments.new(comment_params)
     @comment.author = @user
     if @comment.save
-      # redirect_to user_post_path(@user, @post)
       redirect_to request.referrer
 
     else
       render :new
     end
   end
-  
+
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy

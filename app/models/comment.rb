@@ -11,9 +11,4 @@ class Comment < ApplicationRecord
   def update_post_comment_counter
     post.increment!(:commentscounter)
   end
-
-  def decrement_post_comment_counter
-    post.decrement!(:commentscounter)
-  end
-
 end

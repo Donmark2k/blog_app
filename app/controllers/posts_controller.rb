@@ -7,11 +7,8 @@ class PostsController < ApplicationController
   end
 
   def show
-    # @post = Post.find(params[:id])
     @post = Post.find(params[:id])
-    # @user = @post.user
     @user = User.find(@post.author_id)
-
   end
 
   def new
@@ -25,6 +22,13 @@ class PostsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @user = User.find(params[:user_id])
+    @post = @user.posts.find(params[:id])
+    @post.destroy
+    redirect_to user_posts_path(@user)
   end
 
   private
