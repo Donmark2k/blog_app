@@ -17,4 +17,8 @@ class Post < ApplicationRecord
     comments.order(created_at: :desc).limit(5)
   end
   private :update_user_post_counter, :decrement_user_post_counter
+
+  def decrement_user_post_counter
+    author.decrement!(:postscounter)
+  end
 end
