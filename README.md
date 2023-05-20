@@ -46,6 +46,9 @@
 - **[Use preprocessed HTML file with embedded Ruby code.]**
 - **[Use layouts and templates for shared content.]**
 - **[Limit access to web app resources based on authorization rules.]**
+- **[Build an API that is RESTful.]**
+
+
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
